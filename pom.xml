@@ -10,6 +10,8 @@
     <modules>
         <module>proxy</module>
         <module>algorithm</module>
+        <module>all-lock</module>
+        <module>mq</module>
     </modules>
     <packaging>pom</packaging>
 
