@@ -44,9 +44,17 @@ public class RabbitMqTest {
         user.setAge(29);
         helloSender.sendUser(user);
     }
+    /**测试topic模式*/
     @Test
     public void testTopic() {
-//        helloSender.sendToMsgTopic();
-        helloSender.sendToIntTopics();
+        //测试exchange的topic模式，send msg的时候，因为 receiver2绑定的routing-key是 topic.#
+        //所以会匹配所有topic.开头的消息
+        helloSender.sendToMsgTopic();
+//        helloSender.sendToIntTopics();
+    }
+
+    @Test
+    public void testFanout() {
+        helloSender.sentToFanoutExchange();
     }
 }

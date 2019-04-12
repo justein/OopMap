@@ -42,4 +42,10 @@ public class HelloSender {
         System.out.println("Sender2 : "+ msg);
         this.amqpTemplate.convertAndSend("exchange", "topic.int", msg);
     }
+
+    public void sentToFanoutExchange() {
+        String msg = "这是发往fanout的测试消息";
+        System.out.println("Sender fan : "+msg);
+        this.amqpTemplate.convertAndSend("fanoutExchange","",msg);
+    }
 }
